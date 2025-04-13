@@ -1,4 +1,4 @@
-import { View, Text, SafeAreaView, ScrollView, Image, Button, TouchableOpacity } from 'react-native'
+import { View, Text, SafeAreaView, ScrollView, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import images from '@/constants/images'
 import icons from '@/constants/icons'
@@ -10,9 +10,9 @@ const SignIn = () => {
 
   return (
     // Safe area view ensures that the content stays within the border of your screen
-    <SafeAreaView className='bg-white h-full'>
+    <SafeAreaView style={{flex: 1}} className='bg-white h-full'>
       {/* Scroll view ensures that the content is scrollable when it overflows the screen of user's device */}
-      <ScrollView contentContainerClassName='h-full'>
+      <ScrollView contentContainerClassName='h-full' contentContainerStyle={{paddingBottom: 100}}>
         {/* className styles the outer ScrollView container, while contentContainerClassName styles the inner content area where the children are placed. Use it to control layout like padding, spacing, and alignment inside scrollable views. */}
         <Image 
           source={images.onboarding} 
@@ -40,7 +40,7 @@ const SignIn = () => {
             onPress={handleLogin}
             className="bg-white shadow-md shadow-zinc-300 rounded-full w-full py-4 mt-5"
           >
-            {/* Its a button but as we will touch it and not click it, that's why touchableopacity is used*/}
+            {/* Its a button but as we will touch it and not click it, that's why touchable opacity is used*/}
             <View className = "flex flex-row items-center justify-center">
               <Image
                 source = {icons.google}
